@@ -8,24 +8,28 @@ public class Medicine
 		System.out.println("Company : Globex Pharma");
 		System.out.println("Address : Bangalore");
 	}
-}class Tablet extends Medicine
+}
+
+class Tablet extends Medicine
 {
 	public void displayLabel()
 	{
-		System.out.println("store in a cool dry place");
+		System.out.println("Store Tablets in a cool dry place.");
 	}
 }
+
 class Syrup extends Medicine
 {
 	public void displayLabel()
 	{
-		System.out.println("Consumption as directed by the physician");
+		System.out.println("Syrup is consumable only on prescription.");
 	}
 }
+
 class Ointment extends Medicine
 {
 	public void displayLabel()
 	{
-		System.out.println("for external use only");
+		System.out.println("Ointment is for external use only.");
 	}
 }

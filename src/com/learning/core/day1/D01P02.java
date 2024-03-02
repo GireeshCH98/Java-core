@@ -5,10 +5,8 @@ public class D01P02
 	public static void main(String[] args)
 	{
 		
-		Medicine n = new Medicine();
-		n.displayLabel();
-		
-		System.out.println("_______________________________________");
+		//Medicine n = new Medicine();
+		//n.displayLabel();
 		
 		Medicine m = new Tablet();
 		m.displayLabel();
