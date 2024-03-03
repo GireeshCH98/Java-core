@@ -12,7 +12,6 @@ class Tablet implements Medicine
 	{
 		System.out.println("Store Tablets in a cool dry place.");
 	}
-	
 }
 
 class Syrup implements Medicine
