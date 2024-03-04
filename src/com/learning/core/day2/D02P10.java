@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//reverse of the given number
 public class D02P10 
 {
 	public static void reverseNumber(int number)   

@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Given number divisible by 5 or not
 public class D02P05 
 {
 	static boolean isDivisibleBy5(String num)

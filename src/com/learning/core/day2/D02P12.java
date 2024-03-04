@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Print reverse pyramid * pattern
 public class D02P12 
 {
 	public static void main(String[] args)

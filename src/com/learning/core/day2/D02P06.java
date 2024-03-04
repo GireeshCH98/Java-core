@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Print week days using if statement
 public class D02P06 
 {
 	public static void main(String[] args)

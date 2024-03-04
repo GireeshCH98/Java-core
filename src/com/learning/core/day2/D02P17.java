@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Prime number from 1 to N
 public class D02P17 
 {
 	private static Scanner scanner = new Scanner( System.in );

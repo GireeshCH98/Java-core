@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//N-1 fibonacci number
 public class D02P16 
 {
 	public static void main(String args[])  

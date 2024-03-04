@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Accept two number and find power of each
 public class D02P14 
 {
 	public static void main(String[] args)    

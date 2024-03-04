@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+// Grade based on marks
 public class D02P07 
 {
 	 public static void main(String args[])

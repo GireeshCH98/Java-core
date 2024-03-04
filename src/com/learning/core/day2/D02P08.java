@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Sum of N number of elements in the range of l and R where 0<=l<=r<=n-1
 public class D02P08 
 {
 	public static void main(String[] args) 

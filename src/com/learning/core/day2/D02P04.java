@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//maximum of three numbers
 public class D02P04 
 {
 	public static void main(String args[])  

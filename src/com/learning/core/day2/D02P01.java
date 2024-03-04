@@ -1,6 +1,6 @@
 package com.learning.core.day2;
 import java.util.Scanner;
-
+//Printing Months
 public class D02P01 
 {
 	public static void main(String[] args) 

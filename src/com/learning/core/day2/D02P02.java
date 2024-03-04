@@ -1,6 +1,6 @@
 package com.learning.core.day2;
 import java.util.Scanner;
-
+//Print Even Numbers less than or equal to n
 public class D02P02 
 {
 	public static void main(String[] args) 

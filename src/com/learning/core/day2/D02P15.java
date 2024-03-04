@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Count of positive, negative and Zero in numbers
 public class D02P15 
 {	
 	public static void main(String[] args)

@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Display the pattern like right angle triangle for given number
 public class D02P11 
 {
 	public static void main(String[] args)

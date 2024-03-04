@@ -1,7 +1,7 @@
 package com.learning.core.day2;
 
 import java.util.Scanner;
-
+//Display the cube of the number 
 public class D02P09 
 {
 	 public static void main(String[] args)

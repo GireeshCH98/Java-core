@@ -1,6 +1,6 @@
 package com.learning.core.day2;
 import java.util.Scanner;
-
+//Operators
 public class D02P03 
 {
 	public static void main(String[] args) 
