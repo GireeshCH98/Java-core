@@ -11,7 +11,5 @@ public class D01P02
 		m.displayLabel();
 		l.displayLabel();
 		k.displayLabel();
-		
-		
 	}
 }
