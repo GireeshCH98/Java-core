@@ -1,103 +1,103 @@
 package com.learning.core.day4;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
-public class D04P03 
-{
-	public static final String[] VALID_POSTS = {"Probationary Officer", "Assistant", "Special Cadre Officer"};
-	public static class CathayBankException extends Exception 
-	{
-		public CathayBankException(String message) 
-		{
-			super(message);
-		}
-	}
-	public static class Applicant 
-	{
-		private String applicantName;
-		private String postApplied;
-		private int applicantAge;
+class CatheyBankException extends Exception {
+    public CatheyBankException(String message) {
+        super(message);
+    }
+}
 
-		public Applicant(String name, String post, int age) throws CathayBankException 
-		{
-			validateApplicantName(name);
-			validatePost(post);
-			validateAge(age);
-			this.applicantName = name;
-			this.postApplied = post;
-			this.applicantAge = age;
-		}
-		private static void validateApplicantName(String name) throws CathayBankException
-		{
-			if (!name.matches("[A-Za-z ]+")) 
-			{
-				throw new CathayBankException("Invalid Applicant Name: Only alphabets and spaces allowed");
-		    }
-			if (name.length() < 3) 
-			{
-				throw new CathayBankException("Invalid Applicant Name: Must be at least 3 characters long");
-		    }
-		 }
+class InvalidNameException extends CatheyBankException {
+    public InvalidNameException(String message) {
+        super(message);
+    }
+}
 
-		 private static void validatePost(String post) throws CathayBankException 
-		 {
-			 if (!Arrays.asList(VALID_POSTS).contains(post)) 
-			 {
-				 throw new CathayBankException("Invalid post: " + post + ". Valid options are: " + Arrays.toString(VALID_POSTS));
-		     }
-		  }
-		 private static void validateAge(int age) throws CathayBankException 
-		 {
-			 if (age < 18 || age > 60)
-			 {
-				 throw new CathayBankException("Invalid Age: Must be between 18 and 60 (inclusive)");
-		     }
-		 }
-		 public String getApplicantName() 
-		 {
-			 return applicantName;
-		 }
-		 public String getPostApplied() 
-		 {
-			 return postApplied;
-		 }
-		 public int getApplicantAge() 
-		 {
-			 return applicantAge;
-		 }
-		 @Override
-		 public String toString() 
-		 {
-			 return "Applicant [applicantName=" + applicantName + ", postApplied=" + postApplied + ", applicantAge=" + applicantAge + "]";
-		 }
-	}
-	public static void main(String[] args) 
-	{
-		try
-		{
-			Applicant applicant1 = new Applicant("Marry", "Assistant", 34);
-			System.out.println(applicant1);
-			//Applicant applicant2 = new Applicant("Mary", "Clerk", 27);
-		    //System.out.println(applicant2); // Output: CathayBankException: Invalid post: Clerk. Valid options are: [Probationary Officer, Assistant, Special Cadre Officer]
+class InvalidPostException extends CatheyBankException {
+    public InvalidPostException(String message) {
+        super(message);
+    }
+}
 
-		            //Applicant applicant3 = new Applicant("Probationary Officer", 30);
-		           // System.out.println(applicant3); // Output: CathayBankException: Invalid Applicant Name: Only alphabets and spaces allowed
+class InvalidAgeException extends CatheyBankException {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
 
-		           // Applicant applicant4 = new Applicant("Joseph", "Probationary Officer", 30);
-		            //System.out.println(applicant4); // Output: Applicant [applicantName=Joseph, postApplied=Probationary Officer, applicantAge=30]
+class Validator {
+    public void validate(Applicant applicant) throws CatheyBankException {
+        if (!isValidAppName(applicant.getApplicantName())) {
+            throw new InvalidNameException("Invalid Applicant Name");
+        }
+        if (!isValidPost(applicant.getPostApplied())) {
+            throw new InvalidPostException("Invalid Post");
+        }
+        if (!isValidAge(applicant.getApplicantAge())) {
+            throw new InvalidAgeException("Invalid age");
+        }
+        System.out.println("All details are valid");
+    }
 
-		}
-		catch (CathayBankException e) 
-		{
-			System.out.println(e.getMessage());
-		}
-		// Optional: Check if a post is valid
-		System.out.println(isValidPost("Manager")); // Output: false
-		System.out.println(isValidPost("Assistant")); // Output: true
-	}
-	public static boolean isValidPost(String post)
-	{
-		return Arrays.asList(VALID_POSTS).contains(post);
-	}
+    private boolean isValidAppName(String name) {
+        return name != null && !name.isEmpty();
+    }
+
+    private boolean isValidPost(String post) {
+        return post != null && !post.isEmpty() &&
+                (post.equals("Probationary Officer") ||
+                        post.equals("Assistant") ||
+                        post.equals("Special Cadre Officer"));
+    }
+
+    private boolean isValidAge(int age) {
+        return age > 18 && age < 30;
+    }
+}
+
+class Applicant {
+    private String applicantName;
+    private String postApplied;
+    private int applicantAge;
+
+    public Applicant(String applicantName, String postApplied, int applicantAge) {
+        this.applicantName = applicantName;
+        this.postApplied = postApplied;
+        this.applicantAge = applicantAge;
+    }
+
+    public String getApplicantName() {
+        return applicantName;
+    }
+
+    public String getPostApplied() {
+        return postApplied;
+    }
+
+    public int getApplicantAge() {
+        return applicantAge;
+    }
+}
+
+public class D04P03 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("");
+        String name = scanner.nextLine();
+        System.out.print("");
+        String post = scanner.nextLine();
+        System.out.print("");
+        int age = scanner.nextInt();
+
+        Applicant applicant = new Applicant(name, post, age);
+        Validator validator = new Validator();
+
+        try {
+            validator.validate(applicant);
+        } catch (CatheyBankException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
 
