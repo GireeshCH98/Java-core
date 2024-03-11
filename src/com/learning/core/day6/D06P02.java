@@ -7,7 +7,7 @@ public class D06P02
 {
 	public static void main(String[] args) 
 	{
-		// Creating a HashMap to store phone book details
+	    // Creating a HashMap to store phone book details
 	    Map<String, String> phoneBook = new HashMap<>();
 
 	    // Adding predefined phone book details
