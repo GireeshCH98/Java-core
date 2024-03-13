@@ -5,22 +5,26 @@ class Queue {
     private int capacity;
     private int[] array;
 
-    public Queue(int capacity) {
+    public Queue(int capacity) 
+    {
         this.capacity = capacity;
         front = this.size = 0;
         rear = capacity - 1;
         array = new int[this.capacity];
     }
 
-    boolean isFull(Queue queue) {
+    boolean isFull(Queue queue) 
+    {
         return (queue.size == queue.capacity);
     }
 
-    boolean isEmpty(Queue queue) {
+    boolean isEmpty(Queue queue) 
+    {
         return (queue.size == 0);
     }
 
-    void enqueue(int item) {
+    void enqueue(int item) 
+    {
         if (isFull(this))
             return;
         this.rear = (this.rear + 1) % this.capacity;
@@ -41,12 +45,14 @@ class Queue {
 
     void printQueue()
     {
-        if (isEmpty(this)) {
+        if (isEmpty(this)) 
+        {
             System.out.println("Queue is empty.");
             return;
         }
 
-        for (int i = 0; i < this.size; i++) {
+        for (int i = 0; i < this.size; i++) 
+        {
             int index = (front + i) % capacity;
             System.out.print(this.array[index] + " ");
         }
@@ -56,7 +62,8 @@ class Queue {
 
 public class D08P02 
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Queue queue = new Queue(5);
 
         queue.enqueue(89);
