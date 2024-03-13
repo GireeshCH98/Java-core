@@ -6,8 +6,7 @@ import java.util.Queue;
 public class D08P04 
 {
     public static void main(String[] args) 
-    {
- 
+    { 
         Queue<String> queue1 = new LinkedList<>();
         queue1.add("Yellow");
         queue1.add("Green");
