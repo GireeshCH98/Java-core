@@ -2,12 +2,14 @@ package com.learning.core.day8;
 
 import java.util.*;
 
-class CircularQueue {
+class CircularQueue 
+{
     private int front, rear, size;
     private int capacity;
     private int[] array;
 
-    public CircularQueue(int capacity) {
+    public CircularQueue(int capacity) 
+    {
         this.capacity = capacity;
         front = this.size = 0;
         rear = capacity - 1;
@@ -22,7 +24,8 @@ class CircularQueue {
         return (size == 0);
     }
 
-    void enqueue(int item) {
+    void enqueue(int item) 
+    {
         if (isFull())
             return;
         rear = (rear + 1) % capacity;
@@ -30,7 +33,8 @@ class CircularQueue {
         size++;
     }
 
-    int dequeue() {
+    int dequeue() 
+    {
         if (isEmpty())
             return Integer.MIN_VALUE;
 
@@ -40,14 +44,16 @@ class CircularQueue {
         return item;
     }
 
-    void printCircularQueue() {
+    void printCircularQueue() 
+    {
         if (isEmpty()) {
             System.out.println("Circular Queue is empty.");
             return;
         }
         int count = 0;
         int i = front;
-        while (count < size) {
+        while (count < size) 
+        {
             System.out.print(array[i] + " ");
             i = (i + 1) % capacity;
             count++;
@@ -55,7 +61,6 @@ class CircularQueue {
         System.out.println();
     }
 }
-
 public class D08P03 
 {
     public static void main(String[] args) 
@@ -71,7 +76,6 @@ public class D08P03
         circularQueue.enqueue(13);
         circularQueue.enqueue(22);
         circularQueue.enqueue(-8); */
-
         System.out.print("Elements in circular queue: ");
         circularQueue.printCircularQueue();
 
