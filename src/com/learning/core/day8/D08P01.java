@@ -1,6 +1,7 @@
 package com.learning.core.day8;
 
-class Queue {
+class Queue 
+{
     private int front, rear, size;
     private int capacity;
     private int[] array;
@@ -59,13 +60,12 @@ class Queue {
         System.out.println();
     }
 }
-
 public class D08P01 
 {
     public static void main(String[] args) 
     {
         Queue queue = new Queue(5);
-
+        
         queue.enqueue(10);
         queue.enqueue(20);
         queue.enqueue(30);
