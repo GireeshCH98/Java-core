@@ -27,12 +27,12 @@ public class D10P10
     @Test(timeout = 2)
     public void testName() 
     {
-        u.validateUsername("MyName");
+        u.validateUsername("ViratKohli");
     }
 
     @Test(timeout = 2)
     public void testPassword()
     {
-    	u.validatePassword("pass1234");
+    	u.validatePassword("Pass1218");
     }
 }
